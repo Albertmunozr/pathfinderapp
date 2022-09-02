@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Inicio from "./components/Inicio";
 import Navbar from "./components/Navbar";
-import Personaje from "./components/Personaje";
+import Detail from "./components/Detail";
 import Error404 from "./components/Error404";
 
 const navbarLinks = [
   { url: "/", title: "Spells" },
-  { url: "/spells", title: "By Level" },
+  { url: "/bylevel", title: "By Level" },
+  { url: "/byclass", title: "By Class" },
 ];
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Navbar navbarLinks={navbarLinks} />
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="spell/:id" element={<Personaje />} />
+          <Route path="spell/:id" element={<Detail />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

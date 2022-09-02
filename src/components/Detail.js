@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { singleSpell } from "../functions/functions";
 
-const Personaje = () => {
+const Detail = () => {
   const [spell, setSpell] = useState(null);
   const params = useParams();
 
@@ -16,10 +16,6 @@ const Personaje = () => {
     <>
       {spell !== null ? (
         <div>
-          <br />
-          <br />
-          <br />
-          <br />
           <h2>ID: {params.id}</h2>
           <h2>
             {spell.results[0].name} - Nivel: {spell.results[0].data.level.value}
@@ -35,4 +31,4 @@ const Personaje = () => {
   );
 };
 
-export default Personaje;
+export default Detail;
